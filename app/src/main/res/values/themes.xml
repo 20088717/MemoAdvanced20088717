@@ -2,8 +2,8 @@
     <!-- Base application theme. -->
     <style name="Theme.Memo" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/purple_500</item>
-        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorPrimary">#9BA59D</item>
+        <item name="colorPrimaryVariant">#989C99</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/teal_200</item>
@@ -16,7 +16,7 @@
 
     <!-- Tool bar styling -->
     <style name="MyToolbar" parent="Theme.AppCompat.Light.NoActionBar">
-        <item name="android:background">@color/navy</item>
+        <item name="android:background">#A1AAA2</item>
         <item name="android:textColorPrimary">@color/white</item>
         <item name="windowActionBar">false</item>
     </style>
