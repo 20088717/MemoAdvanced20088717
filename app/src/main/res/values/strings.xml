@@ -13,5 +13,5 @@
     <string name="select_memo_image">Select contacts image</string>
     <string name="change_memo_image">Change Image</string>
     <string name="memo_image">contact image</string>
-    <string name="button_start">Click Me</string>
+    <string name="button_start">LogIn</string>
 </resources>
