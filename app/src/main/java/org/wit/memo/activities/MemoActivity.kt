@@ -117,9 +117,18 @@ class MemoActivity : AppCompatActivity(), AnkoLogger {
             R.id.item_cancel -> {
                 finish()
             }
+            else -> super.onOptionsItemSelected(item)
         }
-        return super.onOptionsItemSelected(item)
+        return when (item.itemId) {
+            R.id.action_detailed_log -> { startActivity(Intent(this, DetailedLog::class.java))
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
+
+//        return super.onOptionsItemSelected(item)
     }
+
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)

@@ -14,4 +14,7 @@
     <string name="change_memo_image">Change Image</string>
     <string name="memo_image">contact image</string>
     <string name="button_start">LogIn</string>
+
+    <string name="action_home">Home</string>
+    <string name="action_detailed_log">Detailed Logs</string>
 </resources>

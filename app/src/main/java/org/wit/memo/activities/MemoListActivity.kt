@@ -38,8 +38,15 @@ class MemoListActivity : AppCompatActivity(), MemoListener {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.item_add -> startActivityForResult<MemoActivity>(0)
+            else -> super.onOptionsItemSelected(item)
         }
-        return super.onOptionsItemSelected(item)
+
+        return when (item.itemId) {
+            R.id.action_detailed_log -> { startActivity(Intent(this, DetailedLog::class.java))
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
     }
 
     override fun onMemoClick(memo: MemoModel) {

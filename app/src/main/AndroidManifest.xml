@@ -25,6 +25,7 @@
         <activity android:name=".activities.MemoListActivity">
 
         </activity>
+        <activity android:name=".activities.DetailedLog" />
     </application>
 
 </manifest>
