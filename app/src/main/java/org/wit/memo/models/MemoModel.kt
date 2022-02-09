@@ -9,6 +9,13 @@ data class MemoModel(var id: Long = 0,
                      var description: String = "",
                      var address: String = "",
                      var image: String = "",
-                     var personDate: String = ""
+                     var personDate: String = "",
+
 ) : Parcelable
 
+@Parcelize
+data class DetailedLog(
+    var description: String = "",
+
+
+):Parcelable

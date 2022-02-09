@@ -1,16 +1,49 @@
 package org.wit.memo.activities
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.view.Menu
-import android.view.MenuItem
+import android.util.AttributeSet
+import android.view.*
+import android.widget.ArrayAdapter
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat.startActivity
+import kotlinx.android.synthetic.main.detailed_log.*
 import org.jetbrains.anko.AnkoLogger
 import org.jetbrains.anko.startActivityForResult
 import org.wit.memo.R
+import org.wit.memo.databinding.DetailedLogBinding
 
 class DetailedLog: AppCompatActivity(), AnkoLogger {
+
+    private var _binding: DetailedLogBinding? = null
+    private val binding get() = _binding!!
+
+    override fun onResume(){
+        super.onResume()
+        val therapy = resources.getStringArray(R.array.therapy_assigned)
+        val arrayAdapter = ArrayAdapter(requireContent(),R.layout.dropdown_item,therapy)
+        binding.autoCompleteTextView.setAdapter(arrayAdapter)
+
+    }
+
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View{
+        _binding = DetailedLog.inflate(inflater,container,false)
+
+//        val therapy = resources.getStringArray(R.array.therapy_assigned)
+//        val arrayAdapter = ArrayAdapter(requireContent(),R.layout.dropdown_item,therapy)
+//        binding.autoCompleteTextView.setAdapter(arrayAdapter)
+//
+        return binding.root
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         setContentView(R.layout.detailed_log)

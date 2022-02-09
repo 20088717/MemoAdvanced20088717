@@ -17,4 +17,10 @@
 
     <string name="action_home">Home</string>
     <string name="action_detailed_log">Detailed Logs</string>
+
+    <string-array name="therapy_assigned">
+        <item>Cognitive Therapy</item>
+        <item>Behavioral Therapy</item>
+    </string-array>
+
 </resources>

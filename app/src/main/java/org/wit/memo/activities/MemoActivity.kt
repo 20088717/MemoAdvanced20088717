@@ -117,16 +117,22 @@ class MemoActivity : AppCompatActivity(), AnkoLogger {
             R.id.item_cancel -> {
                 finish()
             }
-            else -> super.onOptionsItemSelected(item)
-        }
-        return when (item.itemId) {
-            R.id.action_detailed_log -> { startActivity(Intent(this, DetailedLog::class.java))
+            R.id.action_detailed_log -> {
+
+                startActivityForResult(intentFor<DetailedLog>().putExtra("patient_info", memo), 0)
+
                 true
             }
             else -> super.onOptionsItemSelected(item)
         }
+//        return when (item.itemId) {
+//            R.id.action_detailed_log -> { startActivity(Intent(this, DetailedLog::class.java))
+//                true
+//            }
+//            else -> super.onOptionsItemSelected(item)
+//        }
 
-//        return super.onOptionsItemSelected(item)
+        return super.onOptionsItemSelected(item)
     }
 
 

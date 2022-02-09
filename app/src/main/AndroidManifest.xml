@@ -26,6 +26,7 @@
 
         </activity>
         <activity android:name=".activities.DetailedLog" />
+        <activity android:name=".activities.DetailedListLog" />
     </application>
 
 </manifest>

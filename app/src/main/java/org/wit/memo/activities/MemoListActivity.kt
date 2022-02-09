@@ -47,6 +47,7 @@ class MemoListActivity : AppCompatActivity(), MemoListener {
             }
             else -> super.onOptionsItemSelected(item)
         }
+        return super.onOptionsItemSelected(item)
     }
 
     override fun onMemoClick(memo: MemoModel) {
