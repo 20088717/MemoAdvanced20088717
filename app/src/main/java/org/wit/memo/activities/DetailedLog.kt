@@ -21,34 +21,40 @@ class DetailedLog: AppCompatActivity(), AnkoLogger {
 
     override fun onResume(){
         super.onResume()
-        val therapy = resources.getStringArray(R.array.therapy_assigned)
-        val arrayAdapter = ArrayAdapter(requireContent(),R.layout.dropdown_item,therapy)
-        binding.autoCompleteTextView.setAdapter(arrayAdapter)
+
 
     }
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View{
-        _binding = DetailedLog.inflate(inflater,container,false)
-
-//        val therapy = resources.getStringArray(R.array.therapy_assigned)
-//        val arrayAdapter = ArrayAdapter(requireContent(),R.layout.dropdown_item,therapy)
-//        binding.autoCompleteTextView.setAdapter(arrayAdapter)
+//    override fun onCreateView(
+//        inflater: LayoutInflater, container: ViewGroup?,
+//        savedInstanceState: Bundle?
+//    ): View{
+////        _binding = DetailedLog.inflate(inflater,container,false)
 //
-        return binding.root
-    }
+////        val therapy = resources.getStringArray(R.array.therapy_assigned)
+////        val arrayAdapter = ArrayAdapter(requireContent(),R.layout.dropdown_item,therapy)
+////        binding.autoCompleteTextView.setAdapter(arrayAdapter)
+////
+//        return binding.root
+//    }
 
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
-    }
+//    override fun onDestroyView() {
+//        super.onDestroyView()
+//        _binding = null
+//    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         setContentView(R.layout.detailed_log)
         super.onCreate(savedInstanceState)
+        createTextAutoComplete()
 
+
+
+    }
+    fun createTextAutoComplete(){
+        val therapy = resources.getStringArray(R.array.therapy_assigned)
+        val arrayAdapter = ArrayAdapter(this,R.layout.dropdown_item,therapy)
+        binding.autoCompleteTextView.setAdapter(arrayAdapter)
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

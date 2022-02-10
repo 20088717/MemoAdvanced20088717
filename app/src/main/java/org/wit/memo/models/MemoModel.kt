@@ -10,12 +10,20 @@ data class MemoModel(var id: Long = 0,
                      var address: String = "",
                      var image: String = "",
                      var personDate: String = "",
+                     var type: String = "",
+                     var descriptionP: String = "",
+                     var prescription: String = "",
+                     var prescriptionDate: String = "",
 
 ) : Parcelable
 
-@Parcelize
-data class DetailedLog(
-    var description: String = "",
-
-
-):Parcelable
+//@Parcelize
+//data class DetailedLog(
+//    var id: Long = 0,
+//    var type: String = "",
+//    var descriptionP: String = "",
+//    var prescription: String = "",
+//    var prescriptionDate: String = "",
+//
+//
+//):Parcelable

@@ -15,8 +15,14 @@
     <string name="memo_image">contact image</string>
     <string name="button_start">LogIn</string>
 
+    <string name="hint_logType">Therapy Assigned</string>
+    <string name="hint_logDescription">Description of Condition</string>
+    <string name="hint_prescription">Prescription Assigned</string>
+
     <string name="action_home">Home</string>
     <string name="action_detailed_log">Detailed Logs</string>
+    <string name="button_addLog">Add Log</string>
+    <string name="hint_logDetails">Log Details</string>
 
     <string-array name="therapy_assigned">
         <item>Cognitive Therapy</item>

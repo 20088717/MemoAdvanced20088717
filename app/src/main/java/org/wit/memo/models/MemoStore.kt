@@ -6,4 +6,6 @@ interface MemoStore {
     fun update(memo: MemoModel)
     fun delete(memo: MemoModel)
 
+
+
 }
