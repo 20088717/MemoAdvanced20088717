@@ -91,6 +91,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:calendarViewShown="false"
+                    android:layout_margin="8dp"
+                    android:hint="@string/hint_dateOfBirth"
                     android:datePickerMode="spinner" />
 
                 <EditText
@@ -105,6 +107,41 @@
                     android:maxLines="1"
                     android:padding="8dp"
                     android:textSize="14sp" />
+
+                <EditText
+                    android:id="@+id/logDescription"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_margin="8dp"
+                    android:autofillHints=""
+                    android:hint="@string/hint_logDescription"
+                    android:inputType="text"
+                    android:maxLength="325"
+                    android:maxLines="14"
+                    android:padding="8dp"
+                    android:textSize="14sp" />
+
+                <EditText
+                    android:id="@+id/prescription"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_margin="8dp"
+                    android:autofillHints=""
+                    android:hint="@string/hint_prescription"
+                    android:inputType="text"
+                    android:maxLength="125"
+                    android:maxLines="5"
+                    android:padding="8dp"
+                    android:textSize="14sp" />
+
+                <DatePicker
+                    android:id="@+id/dateP_Picker"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:calendarViewShown="false"
+                    android:layout_margin="8dp"
+                    android:hint="@string/hint_prescriptionDate"
+                    android:datePickerMode="spinner" />
 
                 <LinearLayout
                     android:layout_width="match_parent"

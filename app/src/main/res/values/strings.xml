@@ -14,6 +14,8 @@
     <string name="change_memo_image">Change Image</string>
     <string name="memo_image">contact image</string>
     <string name="button_start">LogIn</string>
+    <string name="hint_dateOfBirth">Date Of Birth</string>
+    <string name="hint_prescriptionDate">Prescription Date</string>
 
     <string name="hint_logType">Therapy Assigned</string>
     <string name="hint_logDescription">Description of Condition</string>
