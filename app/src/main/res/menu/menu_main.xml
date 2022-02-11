@@ -9,6 +9,13 @@
         app:showAsAction="always" />
 
 <!--    <item-->
+<!--        android:id="@+id/item_search"-->
+<!--        android:icon="@drawable/search_p_foreground"-->
+<!--        android:title="@string/action_search"-->
+<!--        app:showAsAction="always" />-->
+
+
+    <!--    <item-->
 <!--        android:id="@+id/action_detailed_log"-->
 <!--        android:orderInCategory="100"-->
 <!--        android:title="@string/action_detailed_log"-->

@@ -3,6 +3,8 @@ package org.wit.memo.activities
 import android.content.Intent
 import android.os.Bundle
 import android.view.*
+import android.widget.SearchView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.activity_memo_list.*
@@ -16,6 +18,9 @@ class MemoListActivity : AppCompatActivity(), MemoListener {
 
     lateinit var app: MainApp
 
+    private var matchedPatient: ArrayList<MemoModel> = arrayListOf()
+    private var thePatients = mutableListOf<MemoModel>()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_memo_list)
@@ -25,6 +30,7 @@ class MemoListActivity : AppCompatActivity(), MemoListener {
         val layoutManager = LinearLayoutManager(this)
         recyclerView.layoutManager = layoutManager   //recyclerView is a widget in activity_memo_list.xml
         loadMemos()
+        performSearch()
 
         //enable action bar and set title
         toolbar.title = title
@@ -41,12 +47,12 @@ class MemoListActivity : AppCompatActivity(), MemoListener {
             else -> super.onOptionsItemSelected(item)
         }
 
-        return when (item.itemId) {
-            R.id.action_detailed_log -> { startActivity(Intent(this, MemoListActivity::class.java))
-                true
-            }
+        when (item.itemId) {
+            R.id.item_search -> startActivityForResult<DetailedLog>(0)
             else -> super.onOptionsItemSelected(item)
         }
+
+
         return super.onOptionsItemSelected(item)
     }
 
@@ -63,9 +69,43 @@ class MemoListActivity : AppCompatActivity(), MemoListener {
         showMemos(app.memos.findAll())
     }
 
-    fun showMemos (memos: List<MemoModel>) {
+    private fun showMemos (memos: List<MemoModel>) {
+       // thePatients= memos as MutableList<MemoModel>
         recyclerView.adapter = MemoAdapter(memos, this)
         recyclerView.adapter?.notifyDataSetChanged()
+    }
+
+    private fun search(text: String?) {
+        matchedPatient = arrayListOf()
+
+        text?.let {
+            thePatients.forEach { patient ->
+                if (patient.title.contains(text, true)
+                ) {
+                    matchedPatient.add(patient)
+                }
+            }
+            showMemos(matchedPatient)
+            if (matchedPatient.isEmpty()) {
+                Toast.makeText(this, "No match found!", Toast.LENGTH_SHORT).show()
+            }
+
+            thePatients= app.memos.findAll() as MutableList<MemoModel>
+        }
+    }
+
+    private fun performSearch() {
+        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                search(query)
+                return true
+            }
+
+            override fun onQueryTextChange(newText: String?): Boolean {
+                search(newText)
+                return true
+            }
+        })
     }
 }
 

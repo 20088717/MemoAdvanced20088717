@@ -132,14 +132,14 @@ class MemoActivity : AppCompatActivity(), AnkoLogger {
 
                 true
             }
+            R.id.action_search -> {
+
+                startActivityForResult(intentFor<DetailedLog>().putExtra("Search Log", memo), 0)
+
+                true
+            }
             else -> super.onOptionsItemSelected(item)
         }
-//        return when (item.itemId) {
-//            R.id.action_detailed_log -> { startActivity(Intent(this, DetailedLog::class.java))
-//                true
-//            }
-//            else -> super.onOptionsItemSelected(item)
-//        }
 
         return super.onOptionsItemSelected(item)
     }

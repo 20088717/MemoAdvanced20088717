@@ -23,6 +23,7 @@
 
     <string name="action_home">Home</string>
     <string name="action_detailed_log">Detailed Logs</string>
+    <string name="action_search">Search</string>
     <string name="button_addLog">Add Log</string>
     <string name="hint_logDetails">Log Details</string>
 

@@ -14,6 +14,7 @@ import org.wit.memo.models.MemoModel
 
 class DetailedListLog : AppCompatActivity(), LogListener{
     lateinit var app: MainApp
+    var memo = MemoModel()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,15 +36,26 @@ class DetailedListLog : AppCompatActivity(), LogListener{
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        return when (item.itemId) {
-            R.id.action_home -> { startActivity(Intent(this, MemoListActivity::class.java))
+        when (item?.itemId) {
+            // Handle action bar item clicks here. The action bar will
+            // automatically handle clicks on the Home/Up button, so long
+            // as you specify a parent activity in AndroidManifest.xml.
+
+                R.id.action_home -> {
+                    startActivity(Intent(this, MemoListActivity::class.java))
+                    true
+                }
+
+            R . id . action_search -> {
+
+                startActivityForResult(intentFor<DetailedLog>().putExtra("Search Log", memo), 0)
+
                 true
             }
             else -> super.onOptionsItemSelected(item)
+
         }
+        return super.onOptionsItemSelected(item)
     }
 
      override fun onMemoClick(memo: MemoModel) {

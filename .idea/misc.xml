@@ -7,7 +7,7 @@
         <entry key="..\:/Users/jeoal/3D Objects/MemoAdvanced20088717/app/src/main/res/drawable/ic_log_foreground.xml" value="0.1395" />
         <entry key="..\:/Users/jeoal/3D Objects/MemoAdvanced20088717/app/src/main/res/layout/activity_first.xml" value="0.22" />
         <entry key="..\:/Users/jeoal/3D Objects/MemoAdvanced20088717/app/src/main/res/layout/activity_memo.xml" value="0.25" />
-        <entry key="..\:/Users/jeoal/3D Objects/MemoAdvanced20088717/app/src/main/res/layout/activity_memo_list.xml" value="0.1" />
+        <entry key="..\:/Users/jeoal/3D Objects/MemoAdvanced20088717/app/src/main/res/layout/activity_memo_list.xml" value="0.22" />
         <entry key="..\:/Users/jeoal/3D Objects/MemoAdvanced20088717/app/src/main/res/layout/card_log.xml" value="0.2" />
         <entry key="..\:/Users/jeoal/3D Objects/MemoAdvanced20088717/app/src/main/res/layout/card_memo.xml" value="0.1" />
         <entry key="..\:/Users/jeoal/3D Objects/MemoAdvanced20088717/app/src/main/res/layout/detailed_log.xml" value="0.25" />
@@ -17,6 +17,7 @@
         <entry key="..\:/Users/jeoal/3D Objects/MemoAdvanced20088717/app/src/main/res/menu/menu_detailed_log.xml" value="0.2" />
         <entry key="..\:/Users/jeoal/3D Objects/MemoAdvanced20088717/app/src/main/res/menu/menu_main.xml" value="0.2" />
         <entry key="..\:/Users/jeoal/3D Objects/MemoAdvanced20088717/app/src/main/res/menu/menu_memo.xml" value="0.2" />
+        <entry key="..\:/Users/jeoal/3D Objects/MemoAdvanced20088717/app/src/main/res/menu/menu_search.xml" value="0.2" />
       </map>
     </option>
   </component>
