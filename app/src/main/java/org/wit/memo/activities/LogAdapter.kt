@@ -4,25 +4,28 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import kotlinx.android.synthetic.main.card_log.view.*
 import kotlinx.android.synthetic.main.card_memo.view.*
+import kotlinx.android.synthetic.main.card_memo.view.imageIcon
+import kotlinx.android.synthetic.main.card_memo.view.memoTitle
 import org.wit.memo.R
 import org.wit.memo.helpers.readImageFromPath
 import org.wit.memo.models.MemoModel
 
-interface MemoListener {
+interface LogListener {
     fun onMemoClick(memo: MemoModel)
 }
 
-class MemoAdapter(private var memos: List<MemoModel>,
-                  private val listener: MemoListActivity
+class LogAdapter(private var memos: List<MemoModel>,
+                  private val listener: DetailedListLog
 
 ) :
-        RecyclerView.Adapter<MemoAdapter.MainHolder>() {
+    RecyclerView.Adapter<LogAdapter.MainHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MainHolder {
         return MainHolder(
-                LayoutInflater.from(parent?.context).inflate(
-                        R.layout.card_memo, parent, false))
+            LayoutInflater.from(parent?.context).inflate(
+                R.layout.card_log, parent, false))
     }
 
     override fun onBindViewHolder(holder: MainHolder, position: Int) {
@@ -34,10 +37,10 @@ class MemoAdapter(private var memos: List<MemoModel>,
 
     class MainHolder constructor(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
-        fun bind(memo: MemoModel,  listener : MemoListener) {
+        fun bind(memo: MemoModel, listener: DetailedListLog) {
             itemView.memoTitle.text = memo.title
-            itemView.description.text = memo.description
-            itemView.dateadded.text = memo.personDate
+            itemView.therapyAssigned.text = memo.prescription
+            itemView.prescriptionDate.text = memo.prescriptionDate
             itemView.imageIcon.setImageBitmap(readImageFromPath(itemView.context, memo.image))
             itemView.setOnClickListener { listener.onMemoClick(memo) }
         }

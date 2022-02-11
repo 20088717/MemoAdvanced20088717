@@ -33,6 +33,7 @@ class MemoActivity : AppCompatActivity(), AnkoLogger {
     var edit = false
     val IMAGE_REQUEST = 1
     var dateToBeStored : String =""
+    var dateP : String =""
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -58,8 +59,11 @@ class MemoActivity : AppCompatActivity(), AnkoLogger {
             edit = true
             memo = intent.extras?.getParcelable<MemoModel>("memo_edit")!!
             memoTitleAdd.setText(memo.title)
-           memoDescriptionAdd.setText(memo.description)
+            memoDescriptionAdd.setText(memo.description)
             memoAddressAdd.setText(memo.address)
+            type.setText(memo.type)
+            logDescription.setText(memo.descriptionP)
+            prescription.setText(memo.prescription)
             memoImage.setImageBitmap(readImageFromPath(this, memo.image))
             if (memo.image != null) {
                 chooseImage.setText(R.string.change_memo_image)
@@ -78,9 +82,14 @@ class MemoActivity : AppCompatActivity(), AnkoLogger {
             memo.description = memoDescriptionAdd.text.toString()
             memo.address = memoAddressAdd.text.toString()
             memo.personDate = dateToBeStored
+            memo.type = type.text.toString()
+            memo.descriptionP = logDescription.text.toString()
+            memo.prescription = prescription.text.toString()
+            memo.prescriptionDate = dateP
             if (memo.title.isEmpty()) {
                 toast(R.string.enter_memo_title)
-            } else {
+            }
+            else {
                 if (edit) {
                     app.memos.update(memo.copy())
                 } else {
@@ -119,7 +128,7 @@ class MemoActivity : AppCompatActivity(), AnkoLogger {
             }
             R.id.action_detailed_log -> {
 
-                startActivityForResult(intentFor<DetailedLog>().putExtra("patient_info", memo), 0)
+                startActivityForResult(intentFor<DetailedListLog>().putExtra("patient_info", memo), 0)
 
                 true
             }

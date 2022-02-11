@@ -42,7 +42,7 @@ class MemoListActivity : AppCompatActivity(), MemoListener {
         }
 
         return when (item.itemId) {
-            R.id.action_detailed_log -> { startActivity(Intent(this, DetailedLog::class.java))
+            R.id.action_detailed_log -> { startActivity(Intent(this, MemoListActivity::class.java))
                 true
             }
             else -> super.onOptionsItemSelected(item)

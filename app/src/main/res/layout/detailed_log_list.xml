@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:tools="http://schemas.android.com/tools"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context="org.wit.memo.activities.DetailedListLog">
 
     <com.google.android.material.appbar.AppBarLayout
@@ -12,8 +12,7 @@
         android:layout_height="wrap_content"
         android:fitsSystemWindows="true"
         app:elevation="0dip"
-        app:theme="@style/MyToolbar"
-        tools:ignore="MissingConstraints">
+        app:theme="@style/MyToolbar">
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
@@ -21,4 +20,17 @@
             android:layout_height="match_parent" />
     </com.google.android.material.appbar.AppBarLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="vertical"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="74dp"
+        android:layout_height="58dp"
+        app:srcCompat="@drawable/topc" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
