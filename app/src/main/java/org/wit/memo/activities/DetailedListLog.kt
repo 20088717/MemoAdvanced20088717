@@ -46,13 +46,13 @@ class DetailedListLog : AppCompatActivity(), LogListener{
                     true
                 }
 
-            R . id . action_search -> {
-
-                startActivityForResult(intentFor<DetailedLog>().putExtra("Search Log", memo), 0)
-
-                true
-            }
-            else -> super.onOptionsItemSelected(item)
+//            R . id . action_search -> {
+//
+//                startActivityForResult(intentFor<DetailedLog>().putExtra("Search Log", memo), 0)
+//
+//                true
+//            }
+//            else -> super.onOptionsItemSelected(item)
 
         }
         return super.onOptionsItemSelected(item)

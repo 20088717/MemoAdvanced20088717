@@ -11,20 +11,26 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Memo">
         <activity
-            android:name=".activities.FirstActivity">
-<!--            starting activity-->
-<!--            android:exported="false" >-->
+            android:name=".activities.Home"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".activities.FirstActivity">
 
-        <activity android:name=".activities.MemoActivity" />
-        <activity android:name=".activities.MemoListActivity">
+            <!-- starting activity -->
+            <!-- android:exported="false" > -->
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
+        <activity android:name=".activities.MemoActivity" />
+        <activity android:name=".activities.MemoListActivity"></activity>
         <activity android:name=".activities.DetailedLog" />
         <activity android:name=".activities.DetailedListLog" />
     </application>

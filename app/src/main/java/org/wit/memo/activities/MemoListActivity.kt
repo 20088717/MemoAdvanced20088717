@@ -47,10 +47,10 @@ class MemoListActivity : AppCompatActivity(), MemoListener {
             else -> super.onOptionsItemSelected(item)
         }
 
-        when (item.itemId) {
-            R.id.item_search -> startActivityForResult<DetailedLog>(0)
-            else -> super.onOptionsItemSelected(item)
-        }
+//        when (item.itemId) {
+//            R.id.item_search -> startActivityForResult<DetailedLog>(0)
+//            else -> super.onOptionsItemSelected(item)
+//        }
 
 
         return super.onOptionsItemSelected(item)
