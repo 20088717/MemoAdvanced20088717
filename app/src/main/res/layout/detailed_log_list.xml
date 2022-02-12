@@ -18,6 +18,14 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
+        <SearchView
+            android:id="@+id/searchView"
+            android:layout_width="wrap_content"
+            android:layout_height="54dp"
+            android:background="#55F5F5F5"
+            android:elevation="1dp"
+            android:queryHint="Search"
+            android:visibility="visible" />
     </com.google.android.material.appbar.AppBarLayout>
 
     <androidx.recyclerview.widget.RecyclerView
